@@ -40,6 +40,19 @@ export type EventDetail = Prisma.EventGetPayload<{
   include: typeof eventDetailInclude;
 }>;
 
+const adminEventInclude = {
+  category: true,
+  _count: {
+    select: {
+      bookings: true
+    }
+  }
+} satisfies Prisma.EventInclude;
+
+export type AdminEvent = Prisma.EventGetPayload<{
+  include: typeof adminEventInclude;
+}>;
+
 export type UpcomingEventFilters = {
   search?: string;
   categoryId?: string;
@@ -101,5 +114,14 @@ export async function getEventById(id: string): Promise<EventDetail | null> {
       id
     },
     include: eventDetailInclude
+  });
+}
+
+export async function getAdminEvents(): Promise<AdminEvent[]> {
+  return db.event.findMany({
+    include: adminEventInclude,
+    orderBy: {
+      date: "asc"
+    }
   });
 }

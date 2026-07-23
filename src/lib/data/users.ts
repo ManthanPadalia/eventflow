@@ -1,6 +1,18 @@
-import { Role } from "@prisma/client";
+import { Prisma, Role } from "@prisma/client";
 
 import { db } from "@/lib/db";
+
+const adminUserInclude = {
+  _count: {
+    select: {
+      bookings: true
+    }
+  }
+} satisfies Prisma.UserInclude;
+
+export type AdminUser = Prisma.UserGetPayload<{
+  include: typeof adminUserInclude;
+}>;
 
 export type CreateUserInput = {
   name: string;
@@ -62,6 +74,15 @@ export async function createUser(input: CreateUserInput) {
 
 export async function getUsers() {
   return db.user.findMany({
+    orderBy: {
+      createdAt: "desc"
+    }
+  });
+}
+
+export async function getAdminUsers(): Promise<AdminUser[]> {
+  return db.user.findMany({
+    include: adminUserInclude,
     orderBy: {
       createdAt: "desc"
     }

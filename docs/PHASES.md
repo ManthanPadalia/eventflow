@@ -12,7 +12,7 @@
 | 1     | Data layer & seed           | ✅ Done — Prisma schema, migration, seed data, and data access layer |
 | 2     | Auth                        | ✅ Done — Credentials auth, auth pages, admin middleware, and nav session state |
 | 3     | User side                   | ✅ Done — User event browsing, booking/cancel flows, bookings list, and profile forms |
-| 4     | Admin side                  | ⬜ Not started |
+| 4     | Admin side                  | ✅ Done — Admin shell, dashboard charts, event/category/booking/user management |
 | 5     | Polish pass                 | ⬜ Not started |
 
 > Update the Status cell to ✅ Done (and add a one-line note) when a phase is finished.
