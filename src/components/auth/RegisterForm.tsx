@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import { useToast } from "@/components/ToastProvider";
 import { registerAction } from "@/lib/actions/auth";
 import {
   type RegisterInput,
@@ -18,6 +19,7 @@ type RegisterFormProps = {
 
 export function RegisterForm({ redirectTo }: RegisterFormProps) {
   const router = useRouter();
+  const { showToast } = useToast();
   const [serverError, setServerError] = useState<string | null>(null);
   const {
     register,
@@ -41,6 +43,7 @@ export function RegisterForm({ redirectTo }: RegisterFormProps) {
       return;
     }
 
+    showToast("Account created.");
     router.push(result.redirectTo);
     router.refresh();
   }

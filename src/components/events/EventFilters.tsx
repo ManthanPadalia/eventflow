@@ -88,7 +88,7 @@ export function EventFilters({
           ))}
         </select>
       </label>
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
         <button
           type="submit"
           disabled={isPending}

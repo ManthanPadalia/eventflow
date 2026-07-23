@@ -12,14 +12,14 @@ export async function SiteHeader() {
 
   return (
     <header className="border-b border-border bg-background">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10 lg:px-16">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 py-4 sm:flex-row sm:items-center sm:gap-6 sm:px-10 lg:px-16">
         <Link
           href="/"
           className="font-display text-3xl leading-none text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           EventFlow
         </Link>
-        <nav className="flex items-center gap-5 text-sm">
+        <nav className="flex w-full flex-wrap items-center gap-x-5 gap-y-3 text-sm sm:w-auto sm:justify-end">
           <Link
             href="/"
             className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -43,7 +43,7 @@ export async function SiteHeader() {
             </Link>
           ) : null}
           {displayUser ? (
-            <div className="flex items-center gap-4 border-l border-border pl-5">
+            <div className="flex w-full items-center gap-4 sm:w-auto sm:border-l sm:border-border sm:pl-5">
               <Link
                 href="/profile"
                 className="max-w-32 truncate text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:max-w-none"
@@ -55,7 +55,7 @@ export async function SiteHeader() {
           ) : (
             <Link
               href="/login"
-              className="border-l border-border pl-5 text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:border-l sm:border-border sm:pl-5"
             >
               Login
             </Link>

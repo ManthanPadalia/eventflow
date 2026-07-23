@@ -62,7 +62,7 @@ export function BookingRow({ booking }: BookingRowProps) {
           </span>
         </div>
       </div>
-      <div className="flex items-center gap-3 sm:flex-col sm:items-end">
+      <div className="flex flex-wrap items-center gap-3 sm:flex-col sm:items-end">
         <StatusBadge status={booking.status} />
         {canCancelBooking(booking.status) ? (
           <CancelBookingButton bookingId={booking.id} />

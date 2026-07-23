@@ -53,14 +53,14 @@ export function AdminSidebar() {
 
   return (
     <aside className="border-b border-border bg-background lg:min-h-screen lg:w-64 lg:border-b-0 lg:border-r">
-      <div className="flex items-center justify-between gap-6 px-6 py-5 lg:block lg:space-y-10 lg:px-8 lg:py-8">
+      <div className="flex flex-col items-start gap-5 px-6 py-5 sm:flex-row sm:items-center sm:justify-between lg:block lg:space-y-10 lg:px-8 lg:py-8">
         <Link
           href="/admin"
           className="font-display text-4xl leading-none text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           EventFlow
         </Link>
-        <nav className="flex gap-2 overflow-x-auto lg:flex-col lg:overflow-visible">
+        <nav className="flex w-full gap-2 overflow-x-auto pb-1 sm:w-auto sm:pb-0 lg:w-full lg:flex-col lg:overflow-visible">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActivePath(pathname, item.href);

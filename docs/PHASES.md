@@ -13,7 +13,7 @@
 | 2     | Auth                        | ✅ Done — Credentials auth, auth pages, admin middleware, and nav session state |
 | 3     | User side                   | ✅ Done — User event browsing, booking/cancel flows, bookings list, and profile forms |
 | 4     | Admin side                  | ✅ Done — Admin shell, dashboard charts, event/category/booking/user management |
-| 5     | Polish pass                 | ⬜ Not started |
+| 5     | Polish pass                 | ✅ Done — Loading states, responsive refinements, and final consistency checks |
 
 > Update the Status cell to ✅ Done (and add a one-line note) when a phase is finished.
 

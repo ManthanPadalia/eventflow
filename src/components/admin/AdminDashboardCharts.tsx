@@ -137,9 +137,12 @@ export function AdminDashboardCharts({
 
 function ChartEmptyState() {
   return (
-    <div className="flex h-full items-center border-y border-border">
-      <p className="font-display text-3xl leading-tight text-muted-foreground">
+    <div className="flex h-full flex-col justify-center border-y border-border">
+      <p className="font-display text-3xl leading-tight text-foreground">
         No booking data yet.
+      </p>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        Charts will fill in once demo users reserve event spots.
       </p>
     </div>
   );
