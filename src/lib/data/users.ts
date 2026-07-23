@@ -24,6 +24,31 @@ export async function getUserById(id: string) {
   });
 }
 
+export async function updateUserName(userId: string, name: string) {
+  return db.user.update({
+    where: {
+      id: userId
+    },
+    data: {
+      name
+    }
+  });
+}
+
+export async function updateUserPasswordHash(
+  userId: string,
+  passwordHash: string
+) {
+  return db.user.update({
+    where: {
+      id: userId
+    },
+    data: {
+      passwordHash
+    }
+  });
+}
+
 export async function createUser(input: CreateUserInput) {
   return db.user.create({
     data: {

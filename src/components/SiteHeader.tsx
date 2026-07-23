@@ -2,10 +2,13 @@ import Link from "next/link";
 
 import { SignOutButton } from "@/components/SignOutButton";
 import { auth } from "@/lib/auth";
+import { getUserById } from "@/lib/data/users";
 
 export async function SiteHeader() {
   const session = await auth();
-  const user = session?.user;
+  const sessionUser = session?.user;
+  const user = sessionUser?.id ? await getUserById(sessionUser.id) : null;
+  const displayUser = user ?? sessionUser;
 
   return (
     <header className="border-b border-border bg-background">
@@ -23,7 +26,15 @@ export async function SiteHeader() {
           >
             Events
           </Link>
-          {user?.role === "ADMIN" ? (
+          {displayUser ? (
+            <Link
+              href="/my-bookings"
+              className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              My Bookings
+            </Link>
+          ) : null}
+          {displayUser?.role === "ADMIN" ? (
             <Link
               href="/admin"
               className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -31,11 +42,14 @@ export async function SiteHeader() {
               Admin
             </Link>
           ) : null}
-          {user ? (
+          {displayUser ? (
             <div className="flex items-center gap-4 border-l border-border pl-5">
-              <span className="max-w-32 truncate text-foreground sm:max-w-none">
-                {user.name}
-              </span>
+              <Link
+                href="/profile"
+                className="max-w-32 truncate text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:max-w-none"
+              >
+                {displayUser.name}
+              </Link>
               <SignOutButton />
             </div>
           ) : (
