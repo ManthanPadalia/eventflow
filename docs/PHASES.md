@@ -10,7 +10,7 @@
 |-------|-----------------------------|-------------|
 | 0     | Scaffold & design foundation| ✅ Done — Next/Tailwind/shadcn/Prisma foundation with design smoke test |
 | 1     | Data layer & seed           | ✅ Done — Prisma schema, migration, seed data, and data access layer |
-| 2     | Auth                        | ⬜ Not started |
+| 2     | Auth                        | ✅ Done — Credentials auth, auth pages, admin middleware, and nav session state |
 | 3     | User side                   | ⬜ Not started |
 | 4     | Admin side                  | ⬜ Not started |
 | 5     | Polish pass                 | ⬜ Not started |
