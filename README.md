@@ -21,3 +21,12 @@ The app uses SQLite at `prisma/dev.db`. The database file is ignored by Git and 
 ```bash
 npm run db:setup
 ```
+
+## Demo Credentials
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | `admin@eventflow.test` | `admin123` |
+| User | `alex@eventflow.test` | `password123` |
+| User | `priya@eventflow.test` | `password123` |
+| User | `jordan@eventflow.test` | `password123` |
