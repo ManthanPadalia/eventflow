@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FAF8F4;
+    --foreground: #1A1815;
+    --accent: #C1440E;
+    --accent-foreground: #FAF8F4;
+    --muted: #EFEBE3;
+    --muted-foreground: #6B6459;
+    --border: #E0DACF;
+    --card: #FFFFFF;
+
+    --card-foreground: var(--foreground);
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-foreground);
+    --secondary: var(--muted);
+    --secondary-foreground: var(--foreground);
+    --destructive: var(--accent);
+    --destructive-foreground: var(--accent-foreground);
+    --input: var(--border);
+    --ring: var(--accent);
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply bg-background text-foreground;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+}

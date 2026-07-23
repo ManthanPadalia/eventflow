@@ -8,7 +8,7 @@
 
 | Phase | Name                        | Status      |
 |-------|-----------------------------|-------------|
-| 0     | Scaffold & design foundation| ⬜ Not started |
+| 0     | Scaffold & design foundation| ✅ Done — Next/Tailwind/shadcn/Prisma foundation with design smoke test |
 | 1     | Data layer & seed           | ⬜ Not started |
 | 2     | Auth                        | ⬜ Not started |
 | 3     | User side                   | ⬜ Not started |
